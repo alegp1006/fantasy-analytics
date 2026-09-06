@@ -13,6 +13,7 @@ export async function team(id: string) {
     if (!response.status)
       throw new Error("Error to get team" + response.status);
     const teamData = await response.json();
+    if (!teamData) throw new Error("error no team data return from api");
     return teamData;
   } catch (err) {
     throw new Error("Error to fetch team data: ", { cause: err });

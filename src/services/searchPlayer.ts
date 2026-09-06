@@ -2,7 +2,10 @@ import { URL } from "../constants/url";
 
 export async function searchPlayer(name: string) {
   try {
-    const res = await fetch(`${URL.playerNameSuggestion}${name}`);
+    const url = URL.playerNameSuggestion + name;
+    console.log(url);
+    if (!url) throw new Error("url missing");
+    const res = await fetch(url);
     if (!res.ok) {
       throw new Error("error to get player" + res.status);
     }
