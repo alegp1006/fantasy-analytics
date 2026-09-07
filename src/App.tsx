@@ -1,8 +1,8 @@
 import "./App.css";
-import { usePlayerData } from "./hooks/use.playerData";
+import { useLeagueTable } from "./hooks/use.leagueTable";
 
 function App() {
-  const { data, error, isError, isPending } = usePlayerData("701154");
+  const { data, error, isError, isPending } = useLeagueTable();
 
   if (isPending) {
     return <span>Loading...</span>;
